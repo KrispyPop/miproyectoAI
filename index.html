@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Joseph Miranda — Tattoo Artist </title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel+Decorative:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <span class="logo-main">JOSEPH MIRANDA</span>
+    <span class="logo-sub"> TATTOO ARTIST </span>
+  </div>
+  <nav aria-label="Navegación principal">
+    <a href="#servicios">Servicios</a>
+    <a href="#galeria">Galería</a>
+    <a href="#bot">Consultas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow"> Arte permanente · Diseño único </p>
+    <h1 class="hero-title">
+      Arte japonés,<br>
+      <span>en el corazón de América</span>
+    </h1>
+    <p class="hero-desc">
+      Tatuajes personalizados con alma. Cada diseño nace de una conversación y termina siendo parte de ti para siempre.
+    </p>
+    <a href="#bot" class="hero-cta">
+      <span>Cotizar mi tatuaje</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-symbol">✦</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <p class="section-subtitle">Lo que ofrecemos</p>
+  <h2 class="section-title">Estilos & <span>Servicios</span></h2>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon" role="img" aria-label="Estilo Black and Grey">🖤</span>
+      <div class="service-name">Black & Grey</div>
+      <p class="service-desc">Realismo monocromático con degradados suaves. Ideal para retratos y conceptos oscuros.</p>
+      <div class="service-price">Desde <strong>$80 USD</strong> / hora</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon" role="img" aria-label="Estilo Neo Tradicional">🌹</span>
+      <div class="service-name">Neo Traditional</div>
+      <p class="service-desc">Paleta vibrante y líneas definidas con influencia clásica. Flores y personajes.</p>
+      <div class="service-price">Desde <strong>$90 USD</strong> / hora</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon" role="img" aria-label="Estilo Blackwork">⚡</span>
+      <div class="service-name">Blackwork</div>
+      <p class="service-desc">Tinta negra sólida, patrones geométricos y diseños de alto contraste.</p>
+      <div class="service-price">Desde <strong>$75 USD</strong> / hora</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon" role="img" aria-label="Estilo Fine Line">🔮</span>
+      <div class="service-name">Fine Line</div>
+      <p class="service-desc">Trazos delicados y minimalistas. Perfectos para diseños sutiles.</p>
+      <div class="service-price">Desde <strong>$70 USD</strong> / hora</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHATBOT -->
+<section class="chat-section" id="bot">
+  <div class="chat-layout">
+    <div class="chat-info">
+      <p class="section-subtitle">Asistente virtual</p>
+      <h2>Habla con <span>INKY</span></h2>
+      <p>Nuestro asistente virtual puede responderte dudas sobre precios, estilos y cuidados.</p>
+      <ul class="chat-features">
+        <li>Cotizaciones estimadas</li>
+        <li>Cuidados pre y post tatuaje</li>
+        <li>Conexión directa con el tatuador</li>
+      </ul>
+    </div>
+
+    <div class="chat-widget">
+      <div class="chat-header">
+        <div class="chat-avatar">🤖</div>
+        <div>
+          <div class="chat-name">INKY — Asistente</div>
+          <div class="chat-status">En línea ahora</div>
+        </div>
+      </div>
+      <div class="chat-messages" id="chatMessages"></div>
+      <div class="chat-input-area">
+        <textarea class="chat-input" id="chatInput" placeholder="Escribí tu consulta..." rows="1"></textarea>
+        <button class="send-btn" id="sendBtn" onclick="sendMessage()" aria-label="Enviar mensaje">➤</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contacto">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">INK NOIR</div>
+      <p class="footer-about">Cada pieza es creada con atención al detalle y pasión por el oficio. Tu historia merece ser contada en tu piel.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Navegación</div>
+      <ul class="footer-links">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#bot">Consultas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contacto directo</div>
+      <div class="footer-contact-item">📍 San José, Costa Rica</div>
+      <div class="footer-contact-item">📱 +506 0000-0000</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 JOSEPH MIRANDA · Todos los derechos reservados</span>
+  </div>
+</footer>
+
+<script>
+  /* 
+     NOTA DE SEGURIDAD: 
+     No pongas tu API KEY aquí. Este script simula una respuesta 
+     si no tienes configurado un backend, para que puedas probar el diseño.
+  */
+  const WHATSAPP_NUMBER = "50688880000";
+  let isLoading = false;
+
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      addBotMessage("¡Hola! Soy **INKY**, el asistente virtual del tatuador 🖤 ¿En qué puedo ayudarte hoy?", 
+      ["Cotización", "Estilos", "Cuidados", "Contacto"]);
+    }, 600);
+  });
+
+  function parseMarkdown(text) {
+    const raw = text
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") // Sanitize
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\n/g, '<br>');
+    return raw;
+  }
+
+  function scrollToBottom() {
+    const msgs = document.getElementById('chatMessages');
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function addBotMessage(text, quickReplies = []) {
+    const msgs = document.getElementById('chatMessages');
+    const div = document.createElement('div');
+    div.className = 'msg bot';
+    div.innerHTML = `<div class="msg-bubble">${parseMarkdown(text)}</div><div class="msg-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>`;
+    msgs.appendChild(div);
+
+    if (quickReplies.length > 0) {
+      const qr = document.createElement('div');
+      qr.className = 'quick-replies';
+      quickReplies.forEach(r => {
+        const btn = document.createElement('button');
+        btn.className = 'quick-btn';
+        btn.textContent = r;
+        btn.onclick = () => { qr.remove(); handleUserInput(r); };
+        qr.appendChild(btn);
+      });
+      msgs.appendChild(qr);
+    }
+    scrollToBottom();
+  }
+
+  function addUserMessage(text) {
+    const msgs = document.getElementById('chatMessages');
+    const div = document.createElement('div');
+    div.className = 'msg user';
+    div.innerHTML = `<div class="msg-bubble">${parseMarkdown(text)}</div><div class="msg-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>`;
+    msgs.appendChild(div);
+    scrollToBottom();
+  }
+
+  async function handleUserInput(text) {
+    if (isLoading) return;
+    addUserMessage(text);
+    isLoading = true;
+    
+    // Simulación de escritura
+    const typing = document.createElement('div');
+    typing.className = 'msg bot';
+    typing.innerHTML = `<div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+    document.getElementById('chatMessages').appendChild(typing);
+    scrollToBottom();
+
+    // AQUÍ llamarías a tu endpoint de backend. 
+    // Por ahora, simulamos una respuesta tras 1.5s
+    setTimeout(() => {
+      typing.remove();
+      addBotMessage("¡Entendido! Para darte un precio exacto necesito saber el tamaño y zona del cuerpo. ¿O preferís hablar directo con Joseph Miranda?", ["Hablar con Joseph Miranda", "Ver cuidados"]);
+      isLoading = false;
+    }, 1500);
+  }
+
+  function sendMessage() {
+    const input = document.getElementById('chatInput');
+    if (input.value.trim()) {
+      handleUserInput(input.value);
+      input.value = '';
+      input.style.height = '44px';
+    }
+  }
+
+  document.getElementById('chatInput').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+/* ══════════════════════════════════════════
+   INK NOIR — Versión Corregida y Espaciada
+   ══════════════════════════════════════════ */
+
+/* ── VARIABLES ── */
+:root {
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #1a1a1a;
+  --gold: #c9a96e;
+  --gold-light: #e8cc9a;
+  --text: #e8e0d5;
+  --text-muted: #8a8075;
+  --border: #2a2520;
+  --chat-user: #1e1510;
+  --chat-bot: #13100d;
+  --max-width: 1200px; /* Ancho máximo para que no se pegue a los bordes */
+}
+
+/* ── RESET & BASE ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NOISE OVERLAY */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.3;
+}
+
+/* ── HEADER ── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 5%; /* Padding lateral en % para flexibilidad */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-main {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: 1.5rem;
+  transition: color 0.3s;
+}
+
+nav a:hover { color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to bottom, #ffffff, #888888);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero-title span {
+  background: linear-gradient(to bottom, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero-desc {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  border: 1px solid var(--gold);
+  padding: 1rem 2rem;
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.hero-cta:hover {
+  background: var(--gold);
+  color: #000;
+  box-shadow: 0 0 30px rgba(201, 169, 110, 0.3);
+}
+
+/* ── SECCIONES (Contenedores) ── */
+.section, .chat-section {
+  padding: 6rem 5%;
+  max-width: var(--max-width);
+  margin: 0 auto; /* Esto centra las secciones */
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.section-title span { color: var(--gold); }
+
+/* ── SERVICIOS GRID ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--bg2);
+  padding: 2.5rem;
+  border: 1px solid var(--border);
+  transition: 0.4s;
+}
+
+.service-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-10px);
+}
+
+/* ── CHAT LAYOUT ── */
+.chat-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.chat-widget {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ── FOOTER (El gran cambio) ── */
+footer {
+  background: #050505;
+  border-top: 1px solid var(--border);
+  padding: 5rem 5% 2rem;
+}
+
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto 4rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr; /* Columnas desiguales para mejor look */
+  gap: 4rem;
+}
+
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.footer-about {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.footer-heading {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.8rem; }
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+.footer-links a:hover { color: var(--gold); padding-left: 5px; }
+
+.footer-contact-item {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ── DIVIDER ── */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  opacity: 0.3;
+}
+.divider-line { height: 1px; background: var(--gold); flex: 1; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 968px) {
+  .chat-layout, .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  header { padding: 1rem 5%; }
+  
+  nav { display: none; } /* Ocultamos nav simple en móvil */
+  
+  .hero-title { font-size: 3rem; }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+/* ══════════════════════════════════════════
+   DISEÑO ESPECÍFICO DEL CHATBOT
+   ══════════════════════════════════════════ */
+
+/* Cabecera del Chat */
+.chat-header {
+  padding: 1.2rem 1.5rem;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chat-avatar {
+  width: 45px;
+  height: 45px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 0 15px rgba(201, 169, 110, 0.2);
+}
+
+.chat-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: var(--gold);
+  display: block;
+}
+
+.chat-status {
+  font-size: 0.65rem;
+  color: #4caf50;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.chat-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #4caf50;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #4caf50;
+}
+
+/* Área de Mensajes */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: radial-gradient(circle at center, #151515 0%, #0a0a0a 100%);
+}
+
+.msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  animation: msgIn 0.3s ease-out;
+}
+
+.msg.bot { align-self: flex-start; }
+.msg.user { align-self: flex-end; }
+
+.msg-bubble {
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* Burbuja del Bot */
+.msg.bot .msg-bubble {
+  background: var(--chat-bot);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 0 15px 15px 15px;
+}
+
+/* Burbuja del Usuario */
+.msg.user .msg-bubble {
+  background: var(--chat-user);
+  color: var(--text);
+  border: 1px solid var(--gold);
+  border-radius: 15px 0 15px 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.msg-time {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+/* Respuestas Rápidas (Botones) */
+.quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.quick-btn {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.quick-btn:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* Área de Entrada de Texto */
+.chat-input-area {
+  padding: 1rem;
+  background: var(--bg3);
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.chat-input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: white;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.chat-input:focus {
+  border-color: var(--gold);
+}
+
+.send-btn {
+  background: var(--gold);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  color: var(--bg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.send-btn:hover {
+  background: var(--gold-light);
+  transform: scale(1.05);
+}
+
+/* Indicador de "Escribiendo..." */
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  padding: 5px 10px;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: typingBounce 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+}
+
+@keyframes msgIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
